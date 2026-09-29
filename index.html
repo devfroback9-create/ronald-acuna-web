@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronald Acuña Jr. | El Abusador - Sitio Oficial Fanbase</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDNs -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        braves: {
+                            navy: '#0C2340',
+                            red: '#E31837',
+                            gold: '#B3A369',
+                            dark: '#070D18',
+                            card: '#121E31'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #B3A369 50%, #E31837 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(7, 13, 24, 0.75) 0%, rgba(7, 13, 24, 0.98) 100%), 
+                        url('https://images.unsplash.com/photo-1508802913063-447545f47053?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #070D18;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+
+        .loader-ball {
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 20px rgba(227, 24, 55, 0.6);
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-ball::before, .loader-ball::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px dashed #E31837;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-braves-dark text-slate-100 font-sans antialiased selection:bg-braves-red selection:text-white">
+
+    <div id="preloader">
+        <div class="loader-ball mb-4"></div>
+        <p class="text-braves-gold font-bold uppercase tracking-widest text-sm">Cargando Béisbol Total...</p>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-braves-dark/95 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <span class="bg-braves-red text-white text-xl font-black px-3 py-1 rounded-lg tracking-wider border border-braves-gold/30">13</span>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Acuña <span class="text-braves-red">Jr.</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-semibold text-slate-200 hover:text-braves-red transition-colors">Inicio</a>
+                    <a href="#biografia" class="text-sm font-semibold text-slate-200 hover:text-braves-red transition-colors">Biografía</a>
+                    <a href="#estadisticas" class="text-sm font-semibold text-slate-200 hover:text-braves-red transition-colors">Club 40/70</a>
+                    <a href="#videos" class="text-sm font-semibold text-slate-200 hover:text-braves-red transition-colors">Videos</a>
+                    <a href="#logros" class="text-sm font-semibold text-slate-200 hover:text-braves-red transition-colors">Logros</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" aria-label="Abrir menú" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-braves-card border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#inicio" class="block py-2 text-slate-200 hover:text-braves-red font-medium">Inicio</a>
+            <a href="#biografia" class="block py-2 text-slate-200 hover:text-braves-red font-medium">Biografía</a>
+            <a href="#estadisticas" class="block py-2 text-slate-200 hover:text-braves-red font-medium">Club 40/70</a>
+            <a href="#videos" class="block py-2 text-slate-200 hover:text-braves-red font-medium">Videos</a>
+            <a href="#logros" class="block py-2 text-slate-200 hover:text-braves-red font-medium">Logros</a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-bg min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 bg-braves-red/10 border border-braves-red/30 px-4 py-1.5 rounded-full text-braves-red text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-braves-gold"></i> MVP de la Liga Nacional (Unánime)
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-none">
+                        Ronald <br><span class="gradient-text">Acuña Jr.</span>
+                    </h1>
+                    <p class="text-slate-300 text-lg max-w-xl font-normal leading-relaxed">
+                        Conocido como "El Abusador". Jardinero estrella de los Bravos de Atlanta y creador del histórico e inédito club <strong class="text-white font-bold">40 HR / 70 SB</strong> en las Grandes Ligas.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                        <a href="#videos" class="bg-braves-red hover:bg-red-700 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-braves-red/30 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-play"></i> Ver Jugadas
+                        </a>
+                        <a href="#biografia" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-7 py-3.5 rounded-xl border border-slate-700 transition-all">
+                            Conocer Más
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Player Card Badge -->
+                <div class="flex justify-center">
+                    <div class="bg-gradient-to-b from-braves-card to-slate-900 border border-slate-700/60 p-6 rounded-3xl shadow-2xl max-w-sm w-full relative">
+                        <div class="absolute top-4 right-4 bg-braves-gold/20 border border-braves-gold/40 text-braves-gold px-3 py-1 rounded-full text-xs font-bold">
+                            #13 OF
+                        </div>
+                        <div class="w-full h-64 bg-slate-800 rounded-2xl mb-6 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1562077772-3bd90403f7f0?q=80&w=800&auto=format&fit=crop" alt="Béisbol Ronald Acuña" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-braves-card via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 right-4 text-center">
+                                <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Bravos de Atlanta</span>
+                                <h3 class="text-xl font-bold text-white">La Guaira, Venezuela</h3>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase font-bold">Bateo</span>
+                                <span class="text-lg font-black text-white">Derecho</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase font-bold">Lanzamiento</span>
+                                <span class="text-lg font-black text-white">Derecho</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase font-bold">Debut</span>
+                                <span class="text-lg font-black text-white">2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="estadisticas" class="py-16 bg-braves-card/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white uppercase tracking-wider">Histórico Club 40/70 (2023)</h2>
+                <p class="text-slate-400 mt-2">Primera y única vez en la historia de la MLB con +40 Jonrones y +70 Bases Robadas</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-braves-card p-6 rounded-2xl border border-slate-800 text-center hover:border-braves-red/50 transition-all">
+                    <div class="text-4xl sm:text-5xl font-black text-braves-red mb-1">41</div>
+                    <div class="text-slate-300 font-semibold uppercase text-xs tracking-wider">Jonrones (HR)</div>
+                </div>
+                <div class="bg-braves-card p-6 rounded-2xl border border-slate-800 text-center hover:border-braves-gold/50 transition-all">
+                    <div class="text-4xl sm:text-5xl font-black text-braves-gold mb-1">73</div>
+                    <div class="text-slate-300 font-semibold uppercase text-xs tracking-wider">Bases Robadas (SB)</div>
+                </div>
+                <div class="bg-braves-card p-6 rounded-2xl border border-slate-800 text-center hover:border-slate-700 transition-all">
+                    <div class="text-4xl sm:text-5xl font-black text-white mb-1">.337</div>
+                    <div class="text-slate-300 font-semibold uppercase text-xs tracking-wider">Promedio de Bateo</div>
+                </div>
+                <div class="bg-braves-card p-6 rounded-2xl border border-slate-800 text-center hover:border-slate-700 transition-all">
+                    <div class="text-4xl sm:text-5xl font-black text-white mb-1">106</div>
+                    <div class="text-slate-300 font-semibold uppercase text-xs tracking-wider">Carreras Impulsadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="biografia" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <span class="text-braves-red text-sm font-bold uppercase tracking-widest">Trayectoria</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Orgullo de La Sabana para el Mundo</h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Nacido en La Guaira, Venezuela, Ronald Acuña Jr. fue firmado por los Bravos de Atlanta en 2014. Rápidamente impactó las ligas menores con su velocidad electrizante, poder de bateo descomunal y un fildeo extraordinario.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        Tras ser galardonado como el Novato del Año en 2018, consolidó su estatus de superestrella global. Su dinamismo y carisma en el terreno han inspirado a millones de aficionados del béisbol internacional.
+                    </p>
+                </div>
+                <div id="logros" class="bg-braves-card border border-slate-800 p-8 rounded-3xl space-y-6">
+                    <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-3">Premios y Reconocimientos</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-trophy text-braves-gold text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-white block">MVP Unánime de la Liga Nacional (2023)</strong>
+                                <span class="text-slate-400 text-sm">Premio al Jugador Más Valioso por su temporada récord.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-medal text-braves-gold text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Novato del Año de la LN (2018)</strong>
+                                <span class="text-slate-400 text-sm">Debut impacto con 26 cuadrangulares a los 20 años.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-star text-braves-gold text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-white block">4x All-Star & 3x Bate de Plata</strong>
+                                <span class="text-slate-400 text-sm">Titular en el Juego de Estrellas y mejor jardinero ofensivo.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-braves-red text-sm font-bold uppercase tracking-widest"><i class="fa-brands fa-youtube mr-1"></i> Galería de Videos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Destacados de Ronald Acuña Jr.</h2>
+                <p class="text-slate-400 mt-2 max-w-xl mx-auto">Disfruta directamente en esta página sus jugadas más memorables, jonrones kilométricos y bases robadas.</p>
+            </div>
+
+            <!-- Contenedor con iframe 16:9 100% funcional y preparado para reproducción -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Video 1 -->
+                <div class="bg-braves-card rounded-2xl overflow-hidden border border-slate-800 shadow-xl hover:border-slate-700 transition-all flex flex-col">
+                    <div class="relative w-full aspect-video bg-slate-900">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full border-0"
+                            src="https://www.youtube.com/embed/Y6FcM41T4Gw" 
+                            title="Ronald Acuña Jr. - Mejores Jugadas" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow space-y-4">
+                        <h3 class="text-lg font-bold text-white leading-snug">
+                            🔥 Ronald Acuña Jr. | MEJORES JUGADAS
+                        </h3>
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=Y6FcM41T4Gw" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-braves-red text-slate-100 hover:text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-colors w-full sm:w-auto">
+                                <i class="fa-brands fa-youtube text-red-500 hover:text-white"></i>
+                                Ver en YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="bg-braves-card rounded-2xl overflow-hidden border border-slate-800 shadow-xl hover:border-slate-700 transition-all flex flex-col">
+                    <div class="relative w-full aspect-video bg-slate-900">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full border-0"
+                            src="https://www.youtube.com/embed/2914GiuJWkk" 
+                            title="Ronald Acuña Jr. - 2023 Highlights" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow space-y-4">
+                        <h3 class="text-lg font-bold text-white leading-snug">
+                            Ronald Acuña Jr. 2023 Highlights
+                        </h3>
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=2914GiuJWkk" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-braves-red text-slate-100 hover:text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-colors w-full sm:w-auto">
+                                <i class="fa-brands fa-youtube text-red-500 hover:text-white"></i>
+                                Ver en YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-braves-dark border-t border-slate-800/80 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <div class="flex justify-center items-center gap-2">
+                <span class="bg-braves-red text-white text-lg font-black px-2.5 py-0.5 rounded-md">13</span>
+                <span class="text-lg font-extrabold text-white">BEISBOLZONE</span>
+            </div>
+            <p class="text-slate-400 text-sm">Diseñado por: <strong class="text-white">Pablo Acero</strong> | WhatsApp: <strong class="text-white">04125456295</strong> | Correo: <strong class="text-white">acerp7128@gmail.com</strong></p>
+            <div class="text-xs text-slate-600">
+                © 2026 BEISBOLZONE - Pasión por el Diamante.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ocultar preloader cuando cargue la página
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 600);
+        });
+
+        // Toggle Menú Móvil
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
